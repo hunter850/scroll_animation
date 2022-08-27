@@ -13,10 +13,6 @@
             list-style-type: none;
         }
 
-        body {
-            overflow-x: hidden;
-        }
-
         body::before {
             content: "";
             display: block;
@@ -29,6 +25,10 @@
             top: 0px;
             left: 0px;
             z-index: 1;
+        }
+
+        .cards_container {
+            overflow-x: hidden;
         }
 
         .normal_spinner {
@@ -55,6 +55,20 @@
             opacity: 1;
             transform: translateX(0px) rotate(0deg);
             transition: transform 1s ease, opacity 1s ease;
+        }
+
+        .modal_mw {
+            max-width: 90% !important;
+        }
+        @media screen and (min-width:768px) {
+            .modal_mw {
+                max-width: 75% !important;
+            }
+        }
+        @media screen and (min-width:992px) {
+            .modal_mw {
+                max-width: 50% !important;
+            }
         }
     </style>
 </head>
@@ -306,7 +320,8 @@
                     </div>
                 </div>
                 <strong class="text-center">在inline使用data-sa, data-start, data-end ...</strong>
-                <strong class="text-center">參考aos的inline用法發想而來 <a href="https://github.com/michalsnik/aos">aos github</a></strong>
+                <strong class="text-center">參考aos的inline用法發想而來 <a href="https://github.com/michalsnik/aos">aos
+                        github</a></strong>
                 <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
                     data-offset="100" data-back-again="true" data-back-offset="-100">
                     <div class="card mx-auto" style="width: 18rem;">
@@ -388,15 +403,15 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="parameter_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mw-50">
+    <div class="modal fade justify-content-center" id="parameter_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal_mw mx-auto">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">參數表</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-striped">
+                    <table class="table table-striped w-100">
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">#</th>
