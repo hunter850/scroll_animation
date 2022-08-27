@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            display: block;
+            height: 56px;
+        }
+
+        .nav_fixed {
+            box-shadow: 0px 0px 9px 1px #0006;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        .normal_spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            display: block;
+        }
+
+        .slide-left {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateX(-200px);
+        }
+
+        .slide-right {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateX(200px);
+        }
+
+        .to {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0px) rotate(0deg);
+            transition: transform 1s ease, opacity 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav_fixed w-100">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal"
+                            data-bs-target="#parameter_modal">參數表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="text-center my-5">Scroll Animation</h3>
+    <h5 class="text-center my-5">向下捲動</h5>
+    <div class="cards_container w-100">
+        <div class="container">
+            <div class="spinner-border text-secondary normal_spinner">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="row">
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_normal">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=1" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_normal">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=2" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_normal">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=3" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_normal">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=4" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_normal">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=5" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_normal">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=6" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <strong class="text-center my-4">偶數左往右滑 奇數右往左滑</strong>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_start">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=7" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_start">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=8" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_start">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=9" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_start">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=10" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_start">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=11" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_start">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=12" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <strong class="text-center my-4">3個一組 間隔0.1秒進場</strong>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_delay">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_delay">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=14" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_delay">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=15" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_delay">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=16" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_delay">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=17" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4 sa_delay">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=18" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <strong class="text-center">在inline使用data-sa, data-start, data-end ...</strong>
+                <strong class="text-center">參考aos的inline用法發想而來 <a href="https://github.com/michalsnik/aos">aos github</a></strong>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
+                    data-offset="100" data-back-again="true" data-back-offset="-100">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=19" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
+                    data-offset="100" data-back-again="true" data-back-offset="-100">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=20" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
+                    data-offset="100" data-back-again="true" data-back-offset="-100">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=21" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
+                    data-offset="100" data-back-again="true" data-back-offset="-100">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=22" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
+                    data-offset="100" data-back-again="true" data-back-offset="-100">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=23" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrap col-lg-4 col-md-6 col-12 mb-4" data-sa data-start="slide-left" data-end="to"
+                    data-offset="100" data-back-again="true" data-back-offset="-100">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="https://picsum.photos/200/200?random=24" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="parameter_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mw-50">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">參數表</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">#</th>
+                                <th scope="col" class="text-center">Name</th>
+                                <th scope="col" class="text-center">Type</th>
+                                <th scope="col" class="text-center">Default</th>
+                                <th scope="col" class="text-center">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-center">1</th>
+                                <td class="text-center">start</td>
+                                <td class="text-center">String</td>
+                                <td class="text-center">X</td>
+                                <td class="text-center">進場前的class</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">2</th>
+                                <td class="text-center">end</td>
+                                <td class="text-center">String</td>
+                                <td class="text-center">X</td>
+                                <td class="text-center">進場中的class</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">3</th>
+                                <td class="text-center">offset</td>
+                                <td class="text-center">Number</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">觸發動畫的Y方向偏移距離(px)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">4</th>
+                                <td class="text-center">backAgain</td>
+                                <td class="text-center">Boolean</td>
+                                <td class="text-center">false</td>
+                                <td class="text-center">往回捲是否觸發動畫</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">5</th>
+                                <td class="text-center">backOffset</td>
+                                <td class="text-center">Number</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">往回捲觸發動畫的Y方向偏移距離(px)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">6</th>
+                                <td class="text-center">delay</td>
+                                <td class="text-center">Number</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">間隔一定時間後才觸發動畫</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">7</th>
+                                <td class="text-center">mode</td>
+                                <td class="text-center">'DOMPosition' | 'renderPosition'</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">以box model或transform位置為基準</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-center">8</th>
+                                <td class="text-center">throttle</td>
+                                <td class="text-center">Number | 'none'</td>
+                                <td class="text-center">100</td>
+                                <td class="text-center">時間內至多觸發一次捲動事件(ms)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <script src="./js/scrollAnimation.js"></script>
+    <script>
+        const cardWrap = document.querySelectorAll(".card_wrap ");
+        const saNormal = document.querySelectorAll(".sa_normal");
+        const saStart = document.querySelectorAll(".sa_start");
+        const saDelay = document.querySelectorAll(".sa_delay");
+        const images = document.querySelectorAll("img");
+        const normalSpinner = document.querySelector(".normal_spinner");
+        const myModal = document.getElementById("parameter_modal");
+
+        // 單張圖片loaded
+        function imageLoaded(image) {
+            return new Promise((resolve) => {
+                image.onload = () => {
+                    resolve();
+                }
+            })
+        }
+
+        // 多張圖片loaded
+        function allImageLoaded(images) {
+            return new Promise((resolve) => {
+                const promiseArray = [];
+                images.forEach((el) => {
+                    promiseArray.push(imageLoaded(el));
+                });
+                Promise.all(promiseArray)
+                    .then(() => {
+                        resolve();
+                    })
+                setTimeout(() => {
+                    resolve();
+                }, 3000);
+            })
+        }
+
+        // 隱藏卡片
+        cardWrap.forEach((el) => {
+            el.style.opacity = "0";
+        })
+
+        // 開啟spinner
+        normalSpinner.style.display = "block";
+
+        allImageLoaded(images).then(() => {
+            // 顯示卡片 準備進場
+            cardWrap.forEach((el) => {
+                el.style.opacity = null;
+            })
+            // 關閉spinner
+            normalSpinner.style.display = "none";
+
+            sa(saNormal, {
+                start: "slide-left",
+                end: "to",
+                offset: 100,
+                backAgain: true,
+                backOffset: -100,
+            });
+
+            saStart.forEach((el, index) => {
+                sa(el, {
+                    start: index % 2 === 0 ? "slide-left" : "slide-right",
+                    end: "to",
+                    offset: 100,
+                    backAgain: true,
+                    backOffset: -100,
+                });
+            })
+
+            saDelay.forEach((el, index) => {
+                let cardDelay = 0;
+                if (window.innerWidth >= 992) {
+                    cardDelay = 250 * (index % 3);
+                } else if (window.innerWidth >= 768) {
+                    cardDelay = 250 * (index % 2);
+                }
+                sa(el, {
+                    start: "slide-left",
+                    end: "to",
+                    offset: 100,
+                    delay: cardDelay,
+                    backAgain: true,
+                    backOffset: -100,
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
